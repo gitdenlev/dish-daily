@@ -6,3 +6,6 @@ git pull origin main
 1) git add . - внести всі зміни
 2) git commit -m "я добавив новий функціонал"
 3) git push origin main - відправити зміни на гітхаб
+
+Як підключити свій html файл до index.html?
+<iframe src="test.html" style="width: 100%; height: 100vh; border: none;" />
