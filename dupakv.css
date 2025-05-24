@@ -1,75 +1,83 @@
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 40px;
-    flex-wrap: wrap;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+  flex-wrap: wrap;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 42px;
+  color: black;
+  margin-bottom: 30px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.card {
+  width: 280px;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #e0e7c3; /* Более приглушенный салатовый тон */
+  border: 2px solid black; /* Черная обводка */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-bottom: 2px solid black;
+  transition: transform 0.3s ease;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+}
+
+.card-content {
+  padding: 15px;
+  color: black; /* Черный текст */
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: black; /* Черный текст названий */
+}
+
+.card h4 {
+  margin: 10px 0 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+}
+
+/* Анимация появления при наведении */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
   }
-  
-  h1 {
-      width: 100%;
-    text-align: center;
-    font-size: 42px;
-    color: black;
-    margin-bottom: 30px;
-    font-weight: bold;
-    letter-spacing: 2px;
+  to {
+      opacity: 1;
+      transform: translateY(0);
   }
-  
-  .card {
-    width: 280px;
-    border-radius: 15px;
-    overflow: hidden;
-    background-color: #d4ea9e;
-    border: 2px solid #adff2f;
-    box-shadow: 0 0 10px #adff2f66;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px #adff2f, 0 0 40px #adff2f88;
-  }
-  
-  .card img {
-    width: 100%;
-    height: 190px;
-    object-fit: cover;
-    border-bottom: 2px solid #adff2f;
-  }
-  
-  .card-content {
-    padding: 15px;
-    color: #111;
-  }
-  
-  .card h3 {
-    margin-top: 0;
-    margin-bottom: 8px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #006400;
-    text-shadow: 0 0 3px #adff2f;
-  }
-  
-  .card h4 {
-    margin: 10px 0 8px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .ingredient {
-    display: flex;
-    align-items: center;
-    margin-bottom: 6px;
-    font-size: 15px;
-  }
-  
-  .ingredient::before {
-    content: "👨‍🍳";
-    margin-right: 8px;
-  }
-  
+}
+
+.card:hover .card-content {
+  animation: fadeIn 0.3s ease-in-out;
+}
